@@ -2,14 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from contas.models import Transacao
 from .form import TransacaoForm
-import datetime
 # Create your views here.
 
-def home(request):
-  data =  {} 
-  data['transações'] = ['t1','t2', 't3']
-  data['now'] = datetime.datetime.now()
-  return render(request, 'contas/home.html', data)
 
 def listagem(request):
   data = {}
