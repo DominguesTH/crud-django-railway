@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import Pessoa
 import datetime
+from django.contrib.auth.decorators import login_required
+
 
 def home(request):
   return render(request, 'core/home.html')
 
-
+@login_required
 def horario(request):
   data =  {} 
   data['transações'] = ['t1','t2', 't3']

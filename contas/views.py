@@ -2,13 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from contas.models import Transacao
 from .form import TransacaoForm
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
-
-def listagem(request):
-  data = {}
-  data['transacoes'] = Transacao.objects.all()
-  return render(request, 'contas/listagem.html', data)
 
 def nova_transacao(request):
   data = {}
@@ -40,3 +35,9 @@ def delete(request, pk):
   transacao = Transacao.objects.get(pk=pk)
   transacao.delete()
   return redirect('url_listagem')
+
+@login_required
+def listagem(request):
+  data = {}
+  data['transacoes'] = Transacao.objects.all()
+  return render(request, 'contas/listagem.html', data)

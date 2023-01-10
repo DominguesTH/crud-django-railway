@@ -1,0 +1,48 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="{% static 'users/css/login.css' %}" />
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+  <title>Spotkillers</title>
+</head>
+<body>
+  <div class="container">
+   
+     <img src="https://trello.com/1/cards/5e6c25d53c7465498adc1d01/attachments/5e766e977e6eda18a7949543/previews/5e766e987e6eda18a794954c/download/Gaming_boy_playing_pentakillers_torneio_in_computer_illustration_esports_games.png" alt="">
+
+    
+    <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+      <div>
+
+        <div class="dados">
+        <input type="text" placeholder="Username..." name="username">
+        <input type="password" placeholder="Senha..." name="password">
+        <input class="button" type="submit" value="Logar" >
+        </div>
+
+        <div>
+        <p>Ainda não tem uma conta?</p>
+        <a href="{% url 'url_cadastro' %}">Criar uma conta agora.</a>
+        </div>
+
+      </div>
+       {% for k, v in form.errors.items %}
+          {{ v }}
+       {% endfor %}
+    </form>
+    </div>
+  </div>
+
+</body>
+</html>
