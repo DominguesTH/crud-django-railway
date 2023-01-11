@@ -1,0 +1,80 @@
+/*=================== RESET =================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+/*=================== LAYOUT =================== */
+
+.container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+section {
+    padding: 2.5rem 0;
+    text-align-last: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 1rem;
+}
+
+.dados {
+    display: inline-grid;
+    gap: 1rem;
+    min-width: -webkit-fill-available;
+}
+
+input {
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+}
+
+
+.button {
+    background-color: #93FFF0;
+    color: black;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4rem;
+    border-radius: 0.25rem;
+    font: 500 1.4rem violet;
+    transition: background 0.3s;
+    width: max-content;
+    justify-self: center;
+    margin-bottom: 2rem;
+}
+
+.button:hover {
+    background: green;
+    color: white;
+}
+
+.new-user {
+    display: grid;
+    gap: 0.2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
