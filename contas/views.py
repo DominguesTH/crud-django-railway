@@ -4,7 +4,7 @@ from contas.models import Transacao
 from .form import TransacaoForm
 from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def nova_transacao(request):
   data = {}
   form = TransacaoForm(request.POST or None)
@@ -16,7 +16,7 @@ def nova_transacao(request):
   data['form'] = form
   return render(request, 'contas/form.html', data)
 
-
+@login_required
 def update(request, pk):
   data= dict()
   transacao = Transacao.objects.get(pk=pk)
@@ -31,6 +31,8 @@ def update(request, pk):
   data['transacao'] = transacao
   return render(request, 'contas/form.html', data)
 
+
+login_required
 def delete(request, pk):
   transacao = Transacao.objects.get(pk=pk)
   transacao.delete()
